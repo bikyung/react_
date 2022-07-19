@@ -1,20 +1,24 @@
 import './scss/style.scss';
 
 function App() {
-	const colors = ['aqua', 'orange', 'blue', 'red', 'green'];
+	const path = process.env.PUBLIC_URL;
+
+	const imgs = [
+		'Blizzards',
+		'Calm',
+		'Dusty_Road',
+		'Escape',
+		'Payday',
+		'Retreat',
+		'Seasonal',
+		'Vespers',
+	];
 
 	return (
 		<div className='App'>
-			<ul>
-				{colors.map((color, idx) => {
-					const style = { color: color };
-					return (
-						<li key={idx} style={style}>
-							{color}
-						</li>
-					);
-				})}
-			</ul>
+			{imgs.map((img, idx) => (
+				<img key={idx} src={`${path}/img/${img}.jpg`} alt={img} />
+			))}
 		</div>
 	);
 }
