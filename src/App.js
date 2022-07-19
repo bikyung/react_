@@ -1,4 +1,5 @@
 import './scss/style.scss';
+import Card from './Card';
 
 function App() {
 	const path = process.env.PUBLIC_URL;
@@ -16,9 +17,11 @@ function App() {
 
 	return (
 		<div className='App'>
-			{imgs.map((img, idx) => (
-				<img key={idx} src={`${path}/img/${img}.jpg`} alt={img} />
-			))}
+			<section>
+				{imgs.map((img, idx) => {
+					return <Card key={idx} img={img} path={path} />;
+				})}
+			</section>
 		</div>
 	);
 }
